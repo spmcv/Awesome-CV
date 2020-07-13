@@ -74,7 +74,7 @@
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -158,11 +158,8 @@
 
 
 %-------------------------------------------------------------------------------
-%                Configuration for fonts
+%                Configuration for local fonts
 %-------------------------------------------------------------------------------
-% Set the FontAwesome font to be up-to-date.
-% WARNING this conflicts with fontawesome.sty
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
