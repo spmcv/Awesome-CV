@@ -190,6 +190,7 @@
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\entrydescriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{text} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
@@ -670,8 +671,8 @@
   \end{center}
 }
 % Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[5]{%
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{description}{<responsibilities>}
+\newcommand*{\cventry}[6]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -682,7 +683,10 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \ifstrempty{#5}
       {}
-      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
+      {\multicolumn{2}{L{\textwidth}}{\vspace{-1.0mm}\entrydescriptionstyle{#5}} \\}
+    \ifstrempty{#6}
+      {}
+      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}} \\}
   \end{tabular*}%
 }
 
